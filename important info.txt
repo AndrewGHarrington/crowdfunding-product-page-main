@@ -1,0 +1,49 @@
+Your users should be able to:
+
+• View the optimal layout depending on their device's screen size
+• See hover states for interactive elements
+• Make a selection of which pledge to make
+• See an updated progress bar and total money raised based on their pledge total after confirming a pledge
+• See the number of total backers increment by one after confirming a pledge
+• Toggle whether or not the product is bookmarked
+
+Suggested workflow
+
+1. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
+2. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
+3. Write out the base styles for your project, including general content styles, such as font-family and font-size.
+4. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+
+
+
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Moderate cyan: hsl(176, 50%, 47%)     rgb(60, 120, 116)      #3c7874
+- Dark cyan: hsl(176, 72%, 28%)   rgb(20, 71, 68)   #144744
+
+### Neutral
+
+- Black: hsl(0, 0%, 0%)   rgb(0, 0, 0)   #000000
+- Dark gray: hsl(0, 0%, 48%)   rgb(122, 122, 122)   #7a7a7a
+
+## Typography
+
+### Body Copy
+
+- Font size: 16px
+
+### Font
+
+font-family: 'Commissioner', sans-serif;
+- Weights: 400, 500, 700
