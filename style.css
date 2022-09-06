@@ -18,9 +18,18 @@ body {
     padding: 30px 22px;
 }
 
+h2, h3 {
+    font-weight: 700;
+}
+
 h2 {
     font-weight: 700;
     margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
 
 p {
@@ -36,7 +45,7 @@ button {
     border: none;
 }
 
-header {
+header .page-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 190px;
@@ -51,7 +60,7 @@ nav ul {
     display: none;
 }
 
-.bamboo-riser-container, .progress-container, .about-container, .pledges-container {
+.bamboo-riser-container, .progress-container, .about-container, .bamboo-stand-container, .black-stand-container, .mohagany-container {
     background-color: white;
     margin-bottom: 30px;
     padding: 20px;
@@ -126,4 +135,51 @@ nav ul {
 .progress-fill {
     background-color: hsl(176, 50%, 47%);
     width: 75%;
+}
+
+.about-container {
+    text-align: left;
+}
+
+.bamboo-stand-container, .black-stand-container, .mohagany-container {
+    border: 1px solid #929292;
+    text-align: left;
+}
+
+header p {
+    color: hsl(176, 50%, 47%);
+    margin-bottom: 25px;
+}
+
+.amount-left-container {
+    display: flex;
+    align-items: center;
+}
+
+.amount-left p {
+    font-weight: 700;
+    font-size: 2rem;
+    color: black;
+}
+
+.amount-right {
+    margin-left: 5px;
+}
+
+.btn-in-stock, .btn-out-of-stock {
+    padding: 15px;
+    width: 65%;
+    border-radius: 50px;
+}
+
+.btn-in-stock {
+    background-color: hsl(176, 50%, 47%);
+}
+
+.btn-out-of-stock {
+    background-color: #929292;
+}
+
+.out-of-stock {
+    opacity: 50%;
 }
