@@ -257,3 +257,69 @@ input[type="radio"] {
     border: 1px solid #bcbbbb;
     border-radius: 50%;
 }
+
+.pledge-bamboo, .pledge-black, .pledge-mahogany {
+    position: relative;
+}
+
+.pledge-start-divider {
+    background-color: #bcbbbb;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    margin-bottom: 20px;
+}
+
+.pledge-start-container {
+    padding-top: 30px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.pledge-amount-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+input[type="text"], .btn-continue {
+    border-radius: 50px;
+    border-style: none;
+}
+
+.input-container {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    padding: 15px;
+}
+
+input[type="text"] {
+    appearance: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+    font-weight: 700;
+    margin-left: 5px;
+    width: 40%;
+}
+
+.amount-input-box {
+    padding: 15px;
+    border-radius: 50px;
+    border: 1px solid #bcbbbb;
+    width: 40%;
+}
+
+.btn-continue {
+    padding: 15px;
+    width: 55%;
+}
+
+#dollar {
+    color: #bcbbbb;
+    font-weight: 500;
+    margin: 0;
+}
