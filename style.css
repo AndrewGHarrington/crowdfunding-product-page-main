@@ -1,14 +1,97 @@
 html {
+    background-image: url("./images/image-hero-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    background-color: #f0f0f0;
+    font-family: 'Commissioner', sans-serif;
     font-size: 16px;
 }
 
 *, *::before, *::after {
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: #bdbdbd;
+    padding: 30px 22px;
+}
+
+h2 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #929292;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: hsl(176, 50%, 47%);
+    color: white;
+    font-weight: 700;
+    border: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 190px;
+}
+
+nav {
+    flex-grow: 0;
+    align-content: flex-end;
+}
+
+nav ul {
+    display: none;
+}
+
+.bamboo-riser-container, .progress-container, .about-container, .pledges-container {
+    background-color: white;
+    margin-bottom: 30px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.bamboo-riser-container {
+    padding: 40px 20px 20px 20px;
+    position: relative;
+}
+
+.mc-logo-container {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+}
+
+.bamboo-riser-btn-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.btn-back-project {
+    flex-basis: 72%;
+    border-radius: 50px;
+}
+
+.btn-bookmark {
+    flex-basis: 25%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0%);
+}
+
+.btn-bookmark span {
+    display: none;
+}
+
+.progress-container {
+
 }
