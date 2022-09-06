@@ -185,7 +185,7 @@ header p {
     opacity: 50%;
 }
 
-.selection-modal, .nav-list-container {
+.selection-modal, .nav-list-container, .modal-pledge-complete-container {
     display: none;
     position: absolute;
     margin: 0;
@@ -196,13 +196,44 @@ header p {
     z-index: 1;
 }
 
-.selection-modal {
+.selection-modal, .modal-pledge-complete-container {
     background-color: rgba(0, 0, 0, 50%);
     height: 100%;
 }
 
-.nav-list-container {
+.modal-pledge-complete-container {
     display: block;
+    padding: 22px;
+}
+
+.complete-background-container {
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 120px;
+    text-align: center;
+    padding: 40px;
+}
+
+.complete-background-container img {
+    margin-bottom: 20px;
+}
+
+.complete-background-container h2 {
+    font-size: 1.2rem;
+}
+
+.complete-background-container p {
+    font-size: .8rem;
+}
+
+.complete-background-container button {
+    border-radius: 50px;
+    background-color: hsl(176, 50%, 47%);
+    padding: 18px;
+    width: 43%;
+}
+
+.nav-list-container {
     padding: 22px;
 }
 
