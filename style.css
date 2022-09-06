@@ -16,6 +16,7 @@ html {
 
 body {
     padding: 30px 22px;
+    position: relative;
 }
 
 h2, h3 {
@@ -45,7 +46,7 @@ button {
     border: none;
 }
 
-header .page-header {
+.page-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 190px;
@@ -60,7 +61,7 @@ nav ul {
     display: none;
 }
 
-.bamboo-riser-container, .progress-container, .about-container, .bamboo-stand-container, .black-stand-container, .mohagany-container {
+.bamboo-riser-container, .progress-container, .about-container, .bamboo-stand-container, .black-stand-container, .mohagany-container, .modal-pledge-container, .pledge-no-reward, .pledge-bamboo, .pledge-black, .pledge-mahogany {
     background-color: white;
     margin-bottom: 30px;
     padding: 20px;
@@ -141,9 +142,13 @@ nav ul {
     text-align: left;
 }
 
-.bamboo-stand-container, .black-stand-container, .mohagany-container {
+.bamboo-stand-container, .black-stand-container, .mohagany-container, .pledge-no-reward, .pledge-bamboo, .pledge-black, .pledge-mahogany {
     border: 1px solid #929292;
     text-align: left;
+}
+
+.mohagany-container {
+    margin-bottom: 0;
 }
 
 header p {
@@ -151,18 +156,18 @@ header p {
     margin-bottom: 25px;
 }
 
-.amount-left-container {
+.amount-left-container, .pledges-left-container {
     display: flex;
     align-items: center;
 }
 
-.amount-left p {
+.amount-left p, .pledges-left p {
     font-weight: 700;
     font-size: 2rem;
     color: black;
 }
 
-.amount-right {
+.amount-right, .pledges-right p {
     margin-left: 5px;
 }
 
@@ -182,4 +187,73 @@ header p {
 
 .out-of-stock {
     opacity: 50%;
+}
+
+.selection-modal {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 50%);
+    padding: 25px;
+}
+
+.modal-pledge-container {
+    margin-top: 80px;
+    text-align: left;
+    font-size: .9rem;
+}
+
+.heading-and-close-btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.heading-and-close-btn-container h2 {
+    margin: 0;
+}
+
+.modal-pledge-container p {
+    color: #929292;
+}
+
+.pledges-left p {
+    font-size: 1.25rem;
+    color: black;
+}
+
+.pledges-right p {
+    font-size: .9rem;
+}
+
+.radio-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-top: 15px;
+}
+
+.radio-section label {
+    font-weight: 700;
+}
+
+.radio-section p {
+    margin: 5px 0 0 0;
+    color: hsl(176, 50%, 47%);
+}
+
+input[type="radio"] {
+    appearance: none;
+    scale: 160%;
+    color: #bcbbbb;
+    width: 0.9em;
+    height: 0.9em;
+    margin-right: 15px;
+    font: inherit;
+    border: 1px solid #bcbbbb;
+    border-radius: 50%;
 }
