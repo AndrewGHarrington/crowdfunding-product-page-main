@@ -54,18 +54,19 @@ nav ul {
 .bamboo-riser-container, .progress-container, .about-container, .pledges-container {
     background-color: white;
     margin-bottom: 30px;
+    padding: 20px;
     text-align: center;
     border-radius: 8px;
 }
 
 .bamboo-riser-container {
-    padding: 40px 20px 20px 20px;
+    padding: 50px 20px 20px 20px;
     position: relative;
 }
 
 .mc-logo-container {
     position: absolute;
-    top: -30px;
+    top: -28px;
     left: 0;
     width: 100%;
 }
@@ -92,6 +93,37 @@ nav ul {
     display: none;
 }
 
-.progress-container {
+.donations, .backers, .days-left {
+    display: flex;
+    flex-direction: column;
+}
 
+.donation-amount, .backer-amount, .days-left-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.divider {
+    background-color: #bcbbbb;
+    height: 1px;
+    width: 25%;
+    margin: 0 auto 20px auto;
+}
+
+.progress-bar-container {
+    padding: 10px 0;
+}
+
+.progress-bar, .progress-fill {
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 10px;
+    border-radius: 50px;
+}
+
+.progress-fill {
+    background-color: hsl(176, 50%, 47%);
+    width: 75%;
 }
