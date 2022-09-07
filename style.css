@@ -49,6 +49,7 @@ button {
 .page-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 190px;
 }
 
@@ -408,5 +409,50 @@ input[type="text"] {
 }
 
 @media (min-width: 576px) {
+    html {
+        background-image: url(./images/image-hero-desktop.jpg);
+    }
 
+    body {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    main {
+        max-width: 625px;
+        margin: 0 auto;
+    }
+
+    .page-header {
+        margin-bottom: 220px;
+    }
+
+    .btn-hamburger {
+        display: none;
+    }
+
+    .nav-list-container {
+        display: contents;
+        padding: 22px;
+    }
+
+    /* nav {
+        width: 25%;
+    } */
+    
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        background-color: transparent;
+        margin: 0;
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+        -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    }
+    
+    nav li {
+        padding: 10px;
+        border: none;
+        color: white;
+    }
 }
