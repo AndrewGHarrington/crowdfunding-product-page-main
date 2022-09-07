@@ -420,15 +420,17 @@ input[type="text"] {
 
     p {
         margin-bottom: 40px;
+        line-height: 2rem;
+        font-size: .9rem;
     }
 
     main {
-        max-width: 625px;
+        max-width: 635px;
         margin: 0 auto;
     }
 
     .page-header {
-        margin-bottom: 220px;
+        margin-bottom: 200px;
     }
 
     .btn-hamburger {
@@ -439,10 +441,6 @@ input[type="text"] {
         display: contents;
         padding: 22px;
     }
-
-    /* nav {
-        width: 25%;
-    } */
     
     nav ul {
         display: flex;
@@ -460,8 +458,24 @@ input[type="text"] {
         color: white;
     }
 
+    .progress-container, .bamboo-stand-container, .black-stand-container, .mohagany-container, .modal-pledge-container, .pledge-no-reward, .pledge-bamboo, .pledge-black, .pledge-mahogany {
+        padding: 30px 30px 30px 30px;
+    }
+
+    .bamboo-riser-container {
+        padding: 40px 40px 10px 40px;
+    }
+
+    .about-container {
+        padding: 40px;
+    }
+
     .bamboo-riser-btn-container {
         margin-bottom: 28px;
+    }
+
+    .bamboo-riser-container h2 {
+        margin-top: 15px;
     }
 
     .btn-back-project {
@@ -505,6 +519,10 @@ input[type="text"] {
         text-align: left;
         margin-bottom: 0;
     }
+
+    .amount-left-container p {
+        margin: 0;
+    }
     
     .progress-bar-container {
         margin-top: 30px;
@@ -524,5 +542,26 @@ input[type="text"] {
     .progress-fill {
         background-color: hsl(176, 50%, 47%);
         width: 75%;
+    }
+
+    .bamboo-stand-container header, .black-stand-container header, .mohagany-container header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .bamboo-stand-container header p, .black-stand-container header p, .mohagany-container header p {
+        margin: 0;
+    }
+
+    .bamboo-stand-container footer, .black-stand-container footer, .mohagany-container footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bamboo-stand-container footer button, .black-stand-container footer button, .mohagany-container footer button {
+        width: 35%;   
     }
 }
