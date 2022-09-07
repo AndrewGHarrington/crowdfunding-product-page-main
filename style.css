@@ -208,7 +208,7 @@ header p {
 }
 
 .selection-modal {
-    /* display: none; */
+    display: none;
 }
 
 .nav-list-container {
@@ -235,6 +235,7 @@ header p {
 }
 
 .modal-pledge-complete-container {
+    position: fixed;
     padding: 22px;
 }
 
@@ -631,5 +632,25 @@ input[type="text"] {
     .btn-continue {
         margin-left: 15px;
         width: 50%;
+    }
+
+    .center-in-screen-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .complete-background-container {
+        max-width: 500px;
+    }
+
+    .complete-background-container button {
+        width: 30%;
+    }
+
+    .complete-background-container button:active {
+        background-color: hsl(176, 72%, 28%);
     }
 }
