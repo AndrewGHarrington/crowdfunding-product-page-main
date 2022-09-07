@@ -54,6 +54,22 @@ button:active {
     background-color: hsl(176, 72%, 28%);
 }
 
+ul button {
+    background-color: transparent;
+}
+
+ul button li:hover {
+    color: hsl(176, 50%, 47%);
+}
+
+ul button:active {
+    background-color: transparent;
+}
+
+ul button li:active {
+    color: hsl(176, 72%, 28%);;
+}
+
 label:hover {
     cursor: pointer;
     color: hsl(176, 50%, 47%);
