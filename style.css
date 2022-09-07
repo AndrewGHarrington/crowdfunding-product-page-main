@@ -54,11 +54,8 @@ button:active {
     background-color: hsl(176, 72%, 28%);
 }
 
-ul button {
-    background-color: transparent;
-}
-
-ul button li:hover {
+nav li:hover {
+    cursor: pointer;
     color: hsl(176, 50%, 47%);
 }
 
@@ -66,7 +63,7 @@ ul button:active {
     background-color: transparent;
 }
 
-ul button li:active {
+nav li:active {
     color: hsl(176, 72%, 28%);;
 }
 
@@ -87,7 +84,16 @@ nav {
     align-content: flex-end;
 }
 
-.btn-hamburger {
+.btn-hamburger, .btn-close-nav {
+    background-color: transparent;
+}
+
+.btn-close-nav {
+    margin-top: 12px;
+    background-color: transparent;
+}
+
+.btn-hamburger:active, .btn-close-nav:active {
     background-color: transparent;
 }
 
@@ -223,19 +229,8 @@ header p {
     opacity: 50%;
 }
 
-.selection-modal {
-    display: none;
-}
-
-.nav-list-container {
-    display: none;
-}
-
-.modal-pledge-complete-container {
-    display: none;
-}
-
 .selection-modal, .nav-list-container, .modal-pledge-complete-container {
+    display: none;
     position: absolute;
     margin: 0;
     top: 0;
@@ -243,6 +238,8 @@ header p {
     width: 100vw;
     padding: 25px;
     z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .selection-modal, .modal-pledge-complete-container {
@@ -282,6 +279,11 @@ header p {
     width: 43%;
 }
 
+.nav-list-close {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .nav-list-container {
     padding: 22px;
 }
@@ -289,7 +291,7 @@ header p {
 nav ul {
     background-color: white;
     border-radius: 8px;
-    margin-top: 68px;
+    margin-top: 38px;
     box-shadow: 0px 49px 89px -5px rgba(0,0,0,0.65);
     -webkit-box-shadow: 0px 49px 89px -5px rgba(0,0,0,0.65);
     -moz-box-shadow: 0px 49px 89px -5px rgba(0,0,0,0.65);
