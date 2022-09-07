@@ -6,6 +6,7 @@ html {
     background-color: #f0f0f0;
     font-family: 'Commissioner', sans-serif;
     font-size: 16px;
+    position: relative;
 }
 
 *, *::before, *::after {
@@ -16,7 +17,6 @@ html {
 
 body {
     padding: 30px 22px;
-    position: relative;
 }
 
 h2, h3 {
@@ -44,6 +44,19 @@ button {
     color: white;
     font-weight: 700;
     border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    background-color: hsl(176, 72%, 28%);
+}
+
+label:hover {
+    cursor: pointer;
+    color: hsl(176, 50%, 47%);
 }
 
 .page-header {
@@ -195,7 +208,7 @@ header p {
 }
 
 .selection-modal {
-    display: none;
+    /* display: none; */
 }
 
 .nav-list-container {
@@ -563,5 +576,60 @@ input[type="text"] {
 
     .bamboo-stand-container footer button, .black-stand-container footer button, .mohagany-container footer button {
         width: 35%;   
+    }
+
+    .modal-pledge-container {
+        max-width: 635px;
+        margin: 160px auto 0px auto;
+    }
+
+    .pledge-description {
+        padding-left: 25px;
+    }
+
+    .radio-section p {
+        margin-top: 0;
+        margin-left: 15px;
+        font-weight: 700;
+    }
+
+    .radio-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .pledge-bamboo {
+        position: relative;
+    }
+
+    .pledges-left-container {
+        position: absolute;
+        top: 42px;
+        right: 50px;
+    }
+
+    .pledge-start-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0;
+    }
+
+    .pledge-start-container p {
+        margin: 0;
+    }
+
+    .pledge-amount-container {
+        flex-basis: 45%;
+    }
+
+    .input-container, .amount-input-box {
+        width: 50%;
+        padding: 6px 0 0 0;
+    }
+
+    .btn-continue {
+        margin-left: 15px;
+        width: 50%;
     }
 }
