@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [My solution](https://your-solution-url.com)
-- Live Site URL: [My live site](https://your-live-site-url.com)
+- Solution URL: [My solution](https://www.frontendmentor.io/solutions/crowdfunding-product-page-css-html5-javascript-mobile-1st-D9yWxhP2Be)
+- Live Site URL: [My live site](https://andrewgharrington.github.io/crowdfunding-product-page-main/)
 
 ## My process
 
