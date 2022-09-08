@@ -9,7 +9,7 @@ const aboutContainer = document.querySelector('.about-container');
 const selectionModal = document.querySelector('.selection-modal');
 const modalPledgeCompleteContainer = document.querySelector('.modal-pledge-complete-container');
 let donationAmount = document.querySelector('.donation-amount').textContent;
-const donationAmountNum = Number(donationAmount.replace(/\W/g,''));
+let donationAmountNum = Number(donationAmount.replace(/\W/g,''));
 const goalAmount = 100000;
 let dontationPercentage = Math.round((donationAmountNum/goalAmount) * 100);
 let backerAmount = document.querySelector('.backer-amount');
@@ -175,6 +175,7 @@ bambooBtnContinue.addEventListener('click', () => {
         toggleModal(modalPledgeCompleteContainer);
 
         // reduce available bamboo stands by 1
+        bambooPledgesLeftAmt = pledgeAmountsList[0].textContent;
         const amountLeft = Number(bambooPledgesLeftAmt);
         const newAmount = amountLeft - 1;
         pledgeAmountsList[0].textContent = String(newAmount);
@@ -190,6 +191,7 @@ blackBtnContinue.addEventListener('click', () => {
         toggleModal(modalPledgeCompleteContainer);
 
         // reduce available bamboo stands by 1
+        blackPledgesLeftAmt = pledgeAmountsList[1].textContent;
         const amountLeft = Number(blackPledgesLeftAmt);
         const newAmount = amountLeft - 1;
         pledgeAmountsList[1].textContent = String(newAmount);
@@ -289,6 +291,8 @@ function convertNumberToStringWithCommas(number) {
 }
 
 function updateDonationTotal() {
+    donationAmount = document.querySelector('.donation-amount').textContent;
+    donationAmountNum = Number(donationAmount.replace(/\W/g,''));
     // update donations total
     const newDonationAmt = Number(donationAmountNum) + Number(bambooTextInput.value);
     // add $ and comma to amount
