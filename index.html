@@ -26,9 +26,9 @@
           <button class="btn-close-nav"><img src="./images/icon-close-menu.svg" alt="close icon"></button>
         </div>
         <ul>
-          <li>About</li>
-          <li>Discover</li>
-          <li>Get Started</li>
+          <li><a>About</a></li>
+          <li><a>Discover</a></li>
+          <li><a>Get Started</a></li>
         </ul>
       </div>
     </nav>
@@ -42,7 +42,10 @@
       <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
       <div class="bamboo-riser-btn-container">
         <button class="btn-back-project">Back this project</button>
-        <button class="btn-bookmark"><img src="./images/icon-bookmark.svg" alt="bookmark icon"><span>Bookmark</span></button>
+        <button class="btn-bookmark">
+          <svg class="bookmark-svg" width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28"/><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>
+          <span>Bookmark</span>
+        </button>
       </div>
     </section>
     <section class="progress-container">
@@ -63,9 +66,7 @@
         </article>
       </div>
       <div class="progress-bar-container">
-        <div class="progress-bar">
-          <div class="progress-fill"></div>
-        </div>
+        <div class="progress-bar"></div>
       </div>
     </section>
     <section class="about-container">
@@ -91,7 +92,7 @@
           <footer class="pledge-footer">
             <div class="amount-left-container">
               <div class="amount-left">
-                <p>101</p>
+                <p class="stands-left">101</p>
               </div>
               <div class="amount-right">
                 <p>left</p>
@@ -111,7 +112,7 @@
           <footer class="pledge-footer">
             <div class="amount-left-container">
               <div class="amount-left">
-                <p>64</p>
+                <p class="stands-left">64</p>
               </div>
               <div class="amount-right">
                 <p>left</p>
@@ -148,7 +149,7 @@
         <header>
           <div class="heading-and-close-btn-container">
             <h2>Back this project</h2>
-            <button class=".selection-modal-close"><img src="./images/icon-close-modal.svg" alt="close modal icon"></button>
+            <button class="selection-modal-close"><img src="./images/icon-close-modal.svg" alt="close modal icon"></button>
           </div>
           <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
         </header>
@@ -184,25 +185,27 @@
             </p>
             <div class="pledges-left-container">
               <div class="pledges-left">
-                <p>101</p>
+                <p class="stands-left">101</p>
               </div>
               <div class="pledges-right">
                 <p>left</p>
               </div>
             </div>
             <!-- Selected pledge start -->
-            <div class="pledge-start-divider"></div>
-            <article class="pledge-start-container">
-              <p>Enter your pledge</p>
-              <div class="pledge-amount-container">
-                <div class="input-container">
-                  <p id="dollar">$</p>
-                  <input type="text" name="amount" id="amount" value="25">
+            <div class="selected-pledge-container">
+              <div class="pledge-start-divider"></div>
+              <article class="pledge-start-container">
+                <p>Enter your pledge</p>
+                <div class="pledge-amount-container">
+                  <div class="input-container">
+                    <p id="dollar">$</p>
+                    <input class="bamboo-text-input" type="text" name="amount" id="amount" value="25">
+                  </div>
+                  <div class="amount-input-box"></div>
+                  <button class="btn-continue">Continue</button>
                 </div>
-                <div class="amount-input-box"></div>
-                <button class="btn-continue">Continue</button>
-              </div>
-            </article>
+              </article>
+            </div>
             <!-- Selected pledge end -->
         </article>
         <article class="pledge-black">
@@ -212,7 +215,7 @@
               </div>
               <div class="radio-right">
                 <div class="radio-top">
-                  <label for="radio-bamboo">Black Edition Stand</label>
+                  <label for="radio-black">Black Edition Stand</label>
                 </div>
                 <div class="radio-bottom">
                   <p>Pledge $75 or more</p>
@@ -224,25 +227,27 @@
             </p>
             <div class="pledges-left-container">
               <div class="pledges-left">
-                <p>64</p>
+                <p class="stands-left">64</p>
               </div>
               <div class="pledges-right">
                 <p>left</p>
               </div>
             </div>
             <!-- Selected pledge start -->
-            <div class="pledge-start-divider"></div>
-            <article class="pledge-start-container">
-              <p>Enter your pledge</p>
-              <div class="pledge-amount-container">
-                <div class="input-container">
-                  <p id="dollar">$</p>
-                  <input type="text" name="amount" id="amount" value="75">
+            <div class="selected-pledge-container">
+              <div class="pledge-start-divider"></div>
+              <article class="pledge-start-container">
+                <p>Enter your pledge</p>
+                <div class="pledge-amount-container">
+                  <div class="input-container">
+                    <p id="dollar">$</p>
+                    <input class="black-text-input" type="text" name="amount" id="amount" value="75">
+                  </div>
+                  <div class="amount-input-box"></div>
+                  <button class="btn-continue">Continue</button>
                 </div>
-                <div class="amount-input-box"></div>
-                <button class="btn-continue">Continue</button>
-              </div>
-            </article>
+              </article>
+            </div>
             <!-- Selected pledge end -->
         </article>
         <article class="pledge-mahogany out-of-stock">
@@ -252,7 +257,7 @@
               </div>
               <div class="radio-right">
                 <div class="radio-top">
-                  <label for="radio-bamboo">Mahogany Special Edition</label>
+                  <label for="radio-mahogany">Mahogany Special Edition</label>
                 </div>
                 <div class="radio-bottom">
                   <p>Pledge $200 or more</p>
@@ -271,18 +276,20 @@
               </div>
             </div>
             <!-- Selected pledge start -->
-            <div class="pledge-start-divider"></div>
-            <article class="pledge-start-container">
-              <p>Enter your pledge</p>
-              <div class="pledge-amount-container">
-                <div class="input-container">
-                  <p id="dollar">$</p>
-                  <input type="text" name="amount" id="amount" value="200">
+            <div class="selected-pledge-container">
+              <div class="pledge-start-divider"></div>
+              <article class="pledge-start-container">
+                <p>Enter your pledge</p>
+                <div class="pledge-amount-container">
+                  <div class="input-container">
+                    <p id="dollar">$</p>
+                    <input type="text" name="amount" id="amount" value="200">
+                  </div>
+                  <div class="amount-input-box"></div>
+                  <button class="btn-continue">Continue</button>
                 </div>
-                <div class="amount-input-box"></div>
-                <button class="btn-continue">Continue</button>
-              </div>
-            </article>
+              </article>
+            </div>
             <!-- Selected pledge end -->
         </article>
       </section>
@@ -297,7 +304,7 @@
           <p>
             Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.
           </p>
-          <button>Got it!</button>
+          <button id="btn-got-it">Got it!</button>
         </div>
       </div>
     </section>
