@@ -514,6 +514,20 @@ input[type="text"] {
         color: white;
     }
 
+    nav a {
+        pointer-events: auto;
+        color: white;
+    }
+
+    a:hover {
+        cursor: pointer;
+        color: hsl(176, 50%, 47%);
+    }
+    
+    a:active {
+        color: hsl(176, 72%, 28%);
+    }
+
     .progress-container, .bamboo-stand-container, .black-stand-container, .mohagany-container, .modal-pledge-container, .pledge-no-reward, .pledge-bamboo, .pledge-black, .pledge-mahogany {
         padding: 30px 30px 30px 30px;
     }

@@ -8,11 +8,12 @@ const navListContainer = document.querySelector('.nav-list-container');
 const aboutContainer = document.querySelector('.about-container');
 const selectionModal = document.querySelector('.selection-modal');
 const modalPledgeCompleteContainer = document.querySelector('.modal-pledge-complete-container');
-const donationAmount = document.querySelector('.donation-amount').textContent;
+let donationAmount = document.querySelector('.donation-amount').textContent;
 const donationAmountNum = Number(donationAmount.replace(/\W/g,''));
 const goalAmount = 100000;
-const dontationPercentage = Math.round((donationAmountNum/goalAmount) * 100);
-const progressBar = document.querySelector('.progress-bar-container');
+let dontationPercentage = Math.round((donationAmountNum/goalAmount) * 100);
+let backerAmount = document.querySelector('.backer-amount');
+let progressBar = document.querySelector('.progress-bar-container');
 const radioList = document.querySelectorAll('input[type=radio]');
 let selectedRadioIndex = null;
 const selectedPledgeContainerList = document.querySelectorAll('.selected-pledge-container');
@@ -27,7 +28,8 @@ const blackBtnContinue = blackContainer.querySelector('.btn-continue');
 const pledgeAmountsList = document.querySelectorAll('.stands-left');
 let bambooPledgesLeftAmt = pledgeAmountsList[0].textContent;
 let blackPledgesLeftAmt = pledgeAmountsList[1].textContent;
-
+const btnBambooSelect = document.querySelector('.btn-bamboo-select');
+const btnBlackSelect = document.querySelector('.btn-black-select');
 
 // Initilization
 
@@ -78,23 +80,30 @@ btnCloseNav.addEventListener('click', () => {
     btnHamburger.childNodes[0].style.opacity = '1';
 });
 
-// open project select modal
-btnBackProject.addEventListener('click', () => {
-    toggleModal(selectionModal);
-});
-
-selectionModalClose.addEventListener('click', () => {
-    toggleModal(selectionModal);
-});
-
+// toggles bookmark button
 btnBookmark.addEventListener('click', () => {
     if(btnBookmarkToggled) {
         document.querySelector('.bookmark-svg').removeAttribute('id', 'svg-clicked');
         btnBookmarkToggled = false;
+        btnBookmark.querySelector('span').innerText = 'Bookmark';
+        btnBookmark.querySelector('span').style.paddingLeft = '15px';
     } else {
         document.querySelector('.bookmark-svg').setAttribute('id', 'svg-clicked');
         btnBookmarkToggled = true;
+        btnBookmark.querySelector('span').innerText = 'Bookmarked';
+        btnBookmark.querySelector('span').style.paddingLeft = '8px';
     }
+});
+
+// open project select modal
+btnBackProject.addEventListener('click', () => {
+    toggleModal(selectionModal);
+    unselectAllPledges();
+});
+
+selectionModalClose.addEventListener('click', () => {
+    toggleModal(selectionModal);
+    unselectAllPledges();
 });
 
 // get all radio buttons and add an event listener
@@ -110,6 +119,7 @@ radioList[0].addEventListener('click', () => {
     });
 
     toggleModal(modalPledgeCompleteContainer);
+    updateBackerTotal();
 });
 
 radioList[1].addEventListener('click', () => {
@@ -134,10 +144,32 @@ radioList[3].addEventListener('click', () => {
     radioList[3].checked = false;
 });
 
-document.querySelector('#btn-got-it').addEventListener('click', () => {
-    toggleModal(modalPledgeCompleteContainer);
-});
+// open backing modal
+// apply select pledge style to correct pledge card
+btnBambooSelect.onclick = () => {
+    toggleModal(selectionModal);
+    selectedRadioIndex = radioList[1];
+    radioList[1].checked = true;
+    selectedPledgeContainerList[0].style.display = 'block';
+    bambooContainer.classList.add('pledge-selected');
+    bambooContainer.scrollIntoView({behavior: 'smooth'});
+    
+    checkIfSelectedRadio();
+}
 
+btnBlackSelect.onclick = () => {
+    toggleModal(selectionModal);
+    selectedRadioIndex = radioList[2];
+    radioList[2].checked = true;
+    selectedPledgeContainerList[1].style.display = 'block';
+    blackContainer.classList.add('pledge-selected');
+    blackContainer.scrollIntoView({behavior: 'smooth'});
+    
+    checkIfSelectedRadio();
+}
+
+// confirm pledge amount
+// also updates the numbers for donations, backers and available products
 bambooBtnContinue.addEventListener('click', () => {
     if(pledgeInRangeCheck(bambooTextInput, 25, 74)) {
         toggleModal(modalPledgeCompleteContainer);
@@ -147,6 +179,9 @@ bambooBtnContinue.addEventListener('click', () => {
         const newAmount = amountLeft - 1;
         pledgeAmountsList[0].textContent = String(newAmount);
         pledgeAmountsList[2].textContent = String(newAmount);
+
+        updateDonationTotal();
+        updateBackerTotal();
     }
 });
 
@@ -159,12 +194,23 @@ blackBtnContinue.addEventListener('click', () => {
         const newAmount = amountLeft - 1;
         pledgeAmountsList[1].textContent = String(newAmount);
         pledgeAmountsList[3].textContent = String(newAmount);
+
+        updateDonationTotal();
+        updateBackerTotal();
     }
+});
+
+// close confirm modal
+document.querySelector('#btn-got-it').addEventListener('click', () => {
+    toggleModal(modalPledgeCompleteContainer);
+    unselectAllPledges();
 });
 
 
 // FUNCTIONS
 
+// makes the modal visible if it is not visible, and vice-versa
+// if the pledge complete modal is visible, it hides the pledge selection modal
 function toggleModal(modal) {
     if(modal.style.opacity === '0' || modal.style.opacity === '') {
         console.log('in toggleModal: modal was off and is now turned on');
@@ -187,6 +233,9 @@ function calculateProgressBar(progressBar, percentage) {
     progressBar.querySelector('.progress-bar').style.width = stringPercentage;
 }
 
+// when you click a radio, it will turn on the radio you clicked and turn off the other radios
+// it also adds a class to the selected pledge to add "selected" styles to it and remove those
+// styles from the last selected pledge
 function checkIfSelectedRadio() {
     radioList.forEach((curRadio, curIndex) => {
         if(curRadio !== selectedRadioIndex) {
@@ -209,6 +258,8 @@ function checkIfSelectedRadio() {
     });
 }
 
+// checks if the pledge amount you enter is within the range for that plede.
+// if not, it will make the pledge amount the min and not continue on
 function pledgeInRangeCheck(input, min, max) {
     if(Number(input.value) < min || Number(input.value) > max) {
         input.value = min;
@@ -216,4 +267,42 @@ function pledgeInRangeCheck(input, min, max) {
     } else {
         return true;
     }
+}
+
+// turn off all radios and pledge selections
+function unselectAllPledges() {
+    radioList.forEach((item) => {
+        item.checked = false;
+    });
+
+    selectedPledgeContainerList.forEach((item) => {
+        item.style.display = 'none';
+    });
+
+    noRewardContainer.classList.remove('pledge-selected');
+    bambooContainer.classList.remove('pledge-selected');
+    blackContainer.classList.remove('pledge-selected');
+}
+
+function convertNumberToStringWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function updateDonationTotal() {
+    // update donations total
+    const newDonationAmt = Number(donationAmountNum) + Number(bambooTextInput.value);
+    // add $ and comma to amount
+    const newDonationAmtString = convertNumberToStringWithCommas(newDonationAmt);
+    document.querySelector('.donation-amount').textContent = '$' + newDonationAmtString;
+    donationAmount = document.querySelector('.donation-amount').textContent;
+    dontationPercentage = Math.round((donationAmountNum/goalAmount) * 100);
+    progressBar = document.querySelector('.progress-bar-container');
+    calculateProgressBar(progressBar, dontationPercentage);
+}
+
+function updateBackerTotal() {
+    const backerAmountNum = Number(backerAmount.textContent.replace(/\W/g,''));
+    const newBackerAmountNum = backerAmountNum + 1;
+    const newBackerAmountString = convertNumberToStringWithCommas(newBackerAmountNum);
+    backerAmount.textContent = newBackerAmountString;
 }
